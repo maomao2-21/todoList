@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+    <style>
+        .toggle {
+            display: none;
+        }
+        
+        .yincang {
+            opacity: 0
+        }
+        
+        .toggle+label {
+            background-color: white;
+            border-radius: 50px;
+            border: 2px solid #b55959;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 20px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+        }
+        
+        .toggle:checked+label {
+            background-color: #fff;
+        }
+        /* #checkboxFourInput:checked + label:after{
+            content: "";
+            border-radius: 50px;
+            left: 34.5px;
+            position: absolute;
+            background: #b55959;
+            border: #fff solid 2px;
+            height: 16px;
+            width: 16px;
+        } */
+        /* #checkboxFourInput:checked+label:after {
+            content: "\2713";
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div class="choosePwd">
+        <input class="toggle" type="checkbox" id="checkboxFourInput" />
+        <label for="checkboxFourInput1"></label>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function() {    
+            $("input[type='checkbox']").click(function()  { 
+                console.log($(this).is(":checked")); 
+                if ($(this).is(":checked") == true) {
+                    console.log("123");      
+                    $(this).siblings("label").addClass("yincang");    
+                } else {
+                    $(this).siblings("label").removeClass("yincang"); 
+                }
+            });
+        })
+    </script>
+</body>
